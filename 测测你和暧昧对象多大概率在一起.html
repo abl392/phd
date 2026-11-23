@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#FFEFEF">
+<title>测测你和暧昧对象多大概率在一起</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="stage">
+  <main class="card">
+
+    <!-- 封面 -->
+    <section id="cover">
+      <p class="kicker">A SMALL QUIZ ABOUT THE TWO OF YOU</p>
+      <h1 class="cover-title">你和<em>暧昧对象</em><br>多大概率在一起</h1>
+      <p class="cover-sub">40 道题，4 分钟。不谈玄学，只谈证据。<br>每道题都写得足够具体，具体到你一边选一边会想起某条聊天记录。</p>
+      <div class="chips">
+        <span class="chip">40 题</span>
+        <span class="chip">约 4 分钟</span>
+        <span class="chip">选第一反应</span>
+        <span class="chip">可回看改答案</span>
+      </div>
+      <button class="btn wide" id="btnStart">开始测试</button>
+      <p class="cover-foot">结果仅供娱乐参考。真正的答案，在你愿不愿意先说那句话里。</p>
+    </section>
+
+    <!-- 答题 -->
+    <section id="quiz" class="hidden">
+      <div class="q-head">
+        <span id="qIndex">第 1 / 40 题</span>
+        <span class="q-dim" id="qDim">主动度</span>
+      </div>
+      <div class="progress"><span id="bar"></span></div>
+      <div id="qBody">
+        <p class="q-text" id="qText"></p>
+        <div class="opts" id="opts"></div>
+      </div>
+      <div class="q-foot">
+        <button class="link-btn" id="btnPrev">← 上一题</button>
+        <span class="hint">按 1 – 4 键也可以选</span>
+      </div>
+    </section>
+
+    <!-- 结果 -->
+    <section id="result" class="hidden">
+      <div class="result-top">
+        <div class="gauge-wrap">
+          <svg class="gauge" viewBox="0 0 200 200" aria-hidden="true">
+            <defs>
+              <linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#F5BEBE"/>
+                <stop offset="52%" stop-color="#E8869A"/>
+                <stop offset="100%" stop-color="#94A9E0"/>
+              </linearGradient>
+            </defs>
+            <circle class="track" cx="100" cy="100" r="86"/>
+            <circle class="bar" id="gaugeBar" cx="100" cy="100" r="86"/>
+          </svg>
+          <div class="gauge-num"><span id="num">0</span><small>%</small></div>
+        </div>
+        <span class="gauge-cap">你们在一起的可能性</span>
+      </div>
+
+      <h2 class="tier" id="tierTitle"></h2>
+      <p class="verdict" id="verdict"></p>
+
+      <div class="dims" id="dims"></div>
+      <ul class="notes" id="notes"></ul>
+
+      <div class="tips">
+        <h3>接下来可以做的三件事</h3>
+        <ol id="tipsList"></ol>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn ghost" id="btnCopy">复制结果</button>
+        <button class="btn" id="btnRetry">重新测一次</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
